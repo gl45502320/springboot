@@ -1,0 +1,45 @@
+server:
+  port: 9999
+  context-path: /springboot
+
+#  热部署
+  jsp-servlet:
+    init-parameters:
+      development: true
+
+
+
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:oracle:thin:@localhost:1521:XE
+    driver-class-name: oracle.jdbc.OracleDriver
+    username: auction
+    password: auction
+
+#    视图解析器
+  mvc:
+    view:
+      prefix: /
+      suffix: .jsp
+
+
+#   文件上传
+  http:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 100MB
+#    编码
+    encoding:
+      charset: utf-8
+      force: true
+
+mybatis:
+  type-aliases-package: com.gaolong.entity
+  mapper-locations: com/gaolong/dao/*Dao.xml
+
+
+
+
+
+

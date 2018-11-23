@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+<!-- namespace的值是Dao接口的全限定名 -->
+<mapper namespace="com.gaolong.dao.UserDao">
+	<!-- 使用resultMap标签,可以指定实体类的属性和表里面的哪个字段进行关联 -->
+	<!-- type:把结果封装到哪个实体类里面;id:resultMap标签的自定义名字,被调用时要填写的用的 -->
+	<!-- <resultMap type="news.entry.Use" id="UseMap">
+		column:表示字段名
+		property:表示属性名
+		<result column="use" property="use" />
+		<result column="pw" property="pw" />
+	</resultMap> -->
+	
+	<!-- 查询全部操作 -->
+	<!-- id是Dao接口的方法名，resultType是方法的返回值类型，要写类的全限定名 -->   
+	<select id="selectOne" resultType="com.gaolong.entity.User">
+			select * from auction_user where user_name=#{user_name} and user_password=#{user_password}
+	</select>
+	
+	<insert id="insertOne">
+			insert into auction_user values(us.nextval,#{user_name},#{user_password},#{user_card_no},#{user_tel},#{user_address},#{user_post_number},0,#{user_question},#{user_answer})
+	</insert>
+	
+</mapper>
+
+

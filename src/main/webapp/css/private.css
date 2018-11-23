@@ -1,0 +1,57 @@
+@charset "utf-8";
+/* CSS Document */
+.lf{ float:left}
+.rg{ float:right}
+.tg{ text-align:right}
+.blues,.blues a{ color:#0096ff}
+.red,.red a{ color:#FF0000}
+.cl{ clear:both}
+.f14{ font-size:14px}
+ .bar ul{ float:left}
+.wrap{ width:960px; margin:0 auto}
+select,input,label,button,button{ vertical-align:middle}
+.top{padding:40px 0 0 0}
+.main{ padding:27px 0 0 70px; clear:both}
+.spbg{ background:url(../images/bg.png) no-repeat 0 0;}
+.Sidebar{ width:443px; float:left}
+ .Sidebar .ce-t{ background:#0185bb; color:#fff; padding:10px 0 10px 15px; line-height:20px}
+  .Sidebar .ce-t h2{ font-size:24px; font-weight:bold; padding:0 0 5px}
+.Sidebarg{ width:320px; float:right; padding:40px 0 0}
+.login{ padding:22px 0 0}
+ .login dt{ font-weight:bold; font-size:14px; padding:0 0 5px}
+ .login dd{ margin:0 0 8px; clear:both; line-height:18px}
+   .login dd span a{ text-decoration:underline; line-height:34px}
+.inputh{ width:215px; height:27px; border:1px solid #7F7F7F; color:#C1C1C1; margin:0 5px 0 0; line-height:24px}
+.inputs{ width:114px}
+.wordp{ height:27px; border:1px solid #7F7F7F; width:96px; margin:0 6px; cursor:pointer}
+.buttombg{width:99px;height:37px;background-position:-10px -7px; border:none; cursor:pointer; text-align:center; font-weight:bold; color:#fff; line-height:37px; margin:30px 5px 0 0;_margin:28px 5px 0 0}
+.buttombgs{background-position:-143px -4px}
+.blusa{ margin:38px 0 0;_margin:32px 0 0}
+.fontz{ color:#404040; font-weight:bold;}
+ .fontz a{color:#404040;}
+.footer{ padding:60px 0 0; color:#5B5B5B;line-height:23px}
+ .footer a{color:#5B5B5B; }
+/*zhuce*/
+.zclf{ width:492px; float:left}
+.zcrg{ padding:180px 0 0 40px; float:left}
+.xzkbg{width:21px;height:20px;background-position:-119px -11px}
+.zctop{width:492px;height:36px;background-position:-5px -46px}
+.zctop1{background-position:-6px -84px}
+.zctop2{background-position:-5px -122px}
+.zctop3{background-position:-5px -162px}
+.logns{ padding:22px 0 0 13px; width:450px}
+.logns dd{ height:38px; padding:0 0 0 40px; margin:0;}
+ .logns .adl{ padding:48px 0 0 40px}
+ .logns dl dd small{ color:#0096ff; font-size:12px;}
+ .logns label{width:60px; text-align:right; margin:0 5px 0 0;float:left}
+ .logns .labels{ width:180px; text-align:left; float:none}
+ .logns .labe{ width:80px}
+ .logns .laba{ width:120px}
+.logns .hegas{ height:25px; margin:0}
+.brda{ border-right:1px solid #ccc; float:left; height:196px; margin:88px 0 0; width:1px}
+.butts{ margin:20px 0 0}
+ .logns dl .padd30{ padding:60px 0 180px}
+  .logns dl .padp{ padding:100px 0 0 40px}
+   .logns dl .pads{ padding:0 0 100px 40px}
+   .logns dl .padas{ margin:0}
+.fontsz{color:#3F3F3F; font-size:12px; font-weight:normal;}

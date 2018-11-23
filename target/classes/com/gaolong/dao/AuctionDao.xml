@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+<!-- namespace的值是Dao接口的全限定名 -->
+<mapper namespace="com.gaolong.dao.AuctionDao">
+	<!-- 使用resultMap标签,可以指定实体类的属性和表里面的哪个字段进行关联 -->
+	<!-- type:把结果封装到哪个实体类里面;id:resultMap标签的自定义名字,被调用时要填写的用的 -->
+	<!-- <resultMap type="news.entry.Use" id="UseMap">
+		column:表示字段名
+		property:表示属性名
+		<result column="use" property="use" />
+		<result column="pw" property="pw" />
+	</resultMap> -->
+	
+	<!-- 查询全部操作 -->
+	<!-- id是Dao接口的方法名，resultType是方法的返回值类型，要写类的全限定名 -->   
+	
+	
+	<resultMap type="com.gaolong.entity.Auction_record" id="reMap">
+<!-- 		<id column="id" property="id"/>
+		<result column="user_id" property="user_id"/>
+		<result column="auction_id" property="auction_id"/> -->
+		<result column="rtime" property="auction_time"/>
+		<result column="rprice" property="auction_price"/>
+		
+		<association property="user" javaType="com.gaolong.entity.User">
+		<!-- 	<id column="user_id" property="user_id"/> -->
+			<result column="uname" property="user_name"/>
+<!-- 			<result column="user_password" property="user_password"/>
+			<result column="user_card_no" property="user_card_no"/>
+			<result column="user_tel" property="user_tel"/>
+			<result column="user_address" property="user_address"/>
+			<result column="user_post_number" property="user_post_number"/>
+			<result column="user_is_admin" property="user_is_admin"/>
+			<result column="user_question" property="user_question"/>
+			<result column="user_answer" property="user_answer"/> -->
+		</association>
+	</resultMap>
+	
+	
+	
+	<select id="listAll" resultType="com.gaolong.entity.Auction">
+		select * from auction
+		<where>
+			<if test="auction_name!=null and auction_name != ''">
+			auction_name  like #{auction_name}
+			</if>
+			<if test="auction_desc!=null and auction_desc != ''">
+			and auction_desc like #{auction_desc}
+			</if>
+			<if test="auction_id!=null and auction_id != ''">
+			and auction_id=#{auction_id}
+			</if>
+			<if test="auction_start_time!=null and auction_start_time != ''">
+			and auction_start_time <![CDATA[>=]]>#{auction_start_time}
+			</if>
+			<if test="auction_end_time!=null and auction_end_time != ''">
+			and auction_end_time <![CDATA[<=]]>#{auction_end_time}
+			</if>
+			<if test="auction_start_price!=null and auction_start_price != ''">
+			and auction_start_price <![CDATA[>=]]>#{auction_start_price}
+			</if>
+		</where>
+	</select>
+	
+	<delete id="deleteOne">
+			delete from auction where auction_id =#{id}
+	</delete>
+	
+	<update id="updateOne">
+		update auction set auction_name=#{auction_name},auction_start_price=#{auction_start_price},auction_upset=#{auction_upset},auction_start_time=#{auction_start_time},
+							auction_end_time=#{auction_end_time},auction_pic=#{auction_pic},auction_desc=#{auction_desc} where auction_id=#{auction_id}
+	</update>
+	
+	<select id="selectOne" resultType="com.gaolong.entity.Auction">
+		select * from auction where auction_id=#{id}
+	</select>
+	
+	<insert id="insertOne">
+		insert into auction values(auc.nextval,#{auction_name},#{auction_start_price},#{auction_upset},#{auction_start_time},#{auction_end_time},#{auction_pic},#{auction_desc})
+	</insert>
+	
+	<select id="selectlist" resultMap="reMap">
+	select re.auction_time rtime,re.auction_price rprice,u.user_name uname
+	 from
+	(select * from auction_record  where auction_id=#{id} order by auction_price desc) re 
+	left join 
+	auction_user u on re.user_id=u.user_id
+	</select>
+	
+	<insert id="insertRecord">
+			insert into auction_record values (rec.nextval,#{user_id},#{auction_id},sysdate,#{auction_price})
+	</insert>
+</mapper>
+
+

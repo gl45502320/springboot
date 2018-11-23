@@ -1,0 +1,41 @@
+﻿@charset "utf-8";
+
+body{font-family:Arial,"宋体",sans-serif;background:#ffffff;color:#5a5a5a;font-size:12px;min-width:1000px;line-height:24px;text-align:center}
+a{text-decoration:none;color:#5a5a5a}
+a:hover{text-decoration:underline}
+.wrap{width:1000px;text-align:left;margin:0 auto}
+.center{margin:0 auto}
+.offset0{margin-left:0}
+.offset5{margin-left:5px}
+.offset10{margin-left:10px}
+.offset15{margin-left:15px}
+.offset20{margin-left:20px}
+.top0{margin-top:0}
+.top5{margin-top:5px}
+.top10{margin-top:10px}
+.top15{margin-top:15px}
+.top20{margin-top:20px}
+.borders{border:1px solid #d2e1f1}
+.left{float:left}
+.right{float:right}
+.align-left{text-align:left}
+.align-right{text-align:right}
+.acenter{text-align:center}
+.fix:after{clear:both;content:"";display:block;height:0;visibility:hidden}
+.hide{display:none}
+.show{display:block}
+.strong{font-weight:bold}
+.normal{font-weight:normal}
+.no-bg{background:none !important}
+.opacity{-moz-opacity:0.25;opacity:0.25;filter:alpha(opacity=25)}
+.content{z-index:1;margin:0 5px 0;zoom:1}
+.reds,.reds a{color:#F00}
+.blue,.blue a{color:#0177A7}
+.f12{font-size:12px}
+.f14{font-size:14px}
+.f16{font-size:16px}
+
+.hc{visibility:hidden;overflow:hidden;position:absolute;left:-1000em;width:0;height:0;font-size:0;line-height:0}
+img{vertical-align:top}
+.no-border{border:none !important}
+strong{font-weight:bold}
